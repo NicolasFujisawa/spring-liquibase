@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  db:
+    image: postgres:13-alpine
+    container_name: pet_shop_db
+    environment:
+      POSTGRES_DB: pet
+      POSTGRES_USER: pet
+      POSTGRES_PASSWORD: pet
+    ports:
+      - "5432:5432"
+    volumes:
+      - pet_shop_vol:/var/lib/postgresql/data
+
+volumes:
+  pet_shop_vol:
